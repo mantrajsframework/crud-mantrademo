@@ -1,0 +1,7 @@
+{
+    "name": "crudoperations",
+    "description": "Show basic CRUD operations with a command",
+    "version": "1.0.0",
+    "dependencies": [],
+    "defaultconfig": {}
+}

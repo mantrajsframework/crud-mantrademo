@@ -1,0 +1,12 @@
+{
+    "entities" : [
+        {
+            "name" : "crudoperationsitems",
+            "fields": [
+                { "name" : "key", "type" : "string" },
+                { "name" : "value", "type" : "string" },
+                { "name" : "created", "type" : "datetime"}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+  "CurrentVersion": "1",
+  "ComponentsLocations": ["components"],
+  "Entities": {
+    "default": {"provider":"sqlite","databasepath":"./crudmantrademodb.db"}
+  },
+  "DefaultComponents": ["crudoperations"]
+}
