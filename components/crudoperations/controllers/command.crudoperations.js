@@ -16,7 +16,7 @@ module.exports = {
         let opt;
 
         do {
-            opt = await NiceConsole.questionWithOpts( "Choose option: ", CRUD_OPTIONS );
+            opt = await NiceConsole.questionWithOpts( Mantra, "Choose option: ", CRUD_OPTIONS );
 
             switch( opt ) {
                 case 0: await PromptOperations.addItem(Mantra); break;

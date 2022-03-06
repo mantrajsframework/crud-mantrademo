@@ -4,8 +4,8 @@ const NiceConsole = require("../lib/niceconsole");
 
 module.exports = {
     addItem: async (Mantra) => {
-        const itemKey = await getKey();
-        const itemValue = await getValue();
+        const itemKey = await getKey(Mantra);
+        const itemValue = await getValue(Mantra);
     
         const exists = await Mantra.dal.crudoperations.existsItemByKey( Mantra, itemKey );
         
@@ -18,7 +18,7 @@ module.exports = {
     },
     
     removeItem: async (Mantra) => {
-        const itemKey = await getKey();
+        const itemKey = await getKey(Mantra);
         const exists = await Mantra.dal.crudoperations.existsItemByKey( Mantra, itemKey );
         
         if ( !exists ) {
@@ -30,8 +30,8 @@ module.exports = {
     },
     
     updateItem: async (Mantra) => {
-        const itemKey = await getKey();
-        const itemValue = await getValue();
+        const itemKey = await getKey(Mantra);
+        const itemValue = await getValue(Mantra);
     
         const exists = await Mantra.dal.crudoperations.existsItemByKey( Mantra, itemKey );
         
@@ -58,10 +58,10 @@ module.exports = {
     }
 }
 
-async function getKey() {
-    return NiceConsole.question( "Key: " );
+async function getKey(Mantra) {
+    return NiceConsole.question( Mantra, "Key: " );
 }
 
-async function getValue() {
-    return NiceConsole.question( "Value: " );
+async function getValue(Mantra) {
+    return NiceConsole.question( Mantra, "Value: " );
 }
