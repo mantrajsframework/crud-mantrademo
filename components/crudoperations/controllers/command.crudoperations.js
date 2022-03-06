@@ -1,6 +1,5 @@
 "use strict";
 
-const NiceConsole = require("../lib/niceconsole");
 const PromptOperations = require("../lib/promptoperations");
 
 const CRUD_OPTIONS = [ "Add item", 
@@ -16,7 +15,7 @@ module.exports = {
         let opt;
 
         do {
-            opt = await NiceConsole.questionWithOpts( Mantra, "Choose option: ", CRUD_OPTIONS );
+            opt = await Mantra.Utils.Console.questionWithOpts( "Choose option: ", CRUD_OPTIONS );
 
             switch( opt ) {
                 case 0: await PromptOperations.addItem(Mantra); break;
@@ -24,10 +23,10 @@ module.exports = {
                 case 2: await PromptOperations.updateItem(Mantra); break;
                 case 3: await PromptOperations.showItems(Mantra); break;
                 case 4: await PromptOperations.showItemsCount(Mantra); break;
-                case 5: NiceConsole.info("Bye!"); process.exit(0);
+                case 5: Mantra.Utils.Console.info("Bye!",false); process.exit(0);
             }
 
-            NiceConsole.newline();
+            Mantra.Utils.Console.newline();
 
         } while( opt !== 5 ); 
     }
